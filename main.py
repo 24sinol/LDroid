@@ -4,7 +4,6 @@
 import os
 import discord
 from discord.ext import commands
-import keep_alive
 import id
 import random
 import json
@@ -14,8 +13,10 @@ import time
 import math as maf
 import glob
 import pytube
+from dotenv import load_dotenv
+load_dotenv()
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.environ.get('TOKEN')
 deleted = []
 sender = []
 edited = []
@@ -887,9 +888,6 @@ async def EightBall(ctx, *, message=""):
             "My reply is no.", "My sources say no.", " Outlook not so good.",
             "Very doubtful."
         ]))
-
-
-keep_alive.keep_alive()  #pings when it feels like it
 
 try:
     bot.run(TOKEN)  # does stuff
