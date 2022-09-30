@@ -23,7 +23,9 @@ edited = []
 esender = []
 
 intents = discord.Intents.default()
-intents.members = True  # Subscribe to the Members intent
+intents.presences = True
+intents.members = True
+intents.message_content = True
 # intents.presences = True
 # bot = commands.Bot(command_prefix='!', case_insensitive=True,activity=discord.Game(name = "☝️ #1 girlboss!!"))
 bot = commands.Bot(command_prefix='!', case_insensitive=True, intents=intents)
